@@ -1,0 +1,21 @@
+server:
+  port: 8888
+
+loggin:
+  level:
+    root:INFO
+
+spring:
+  application:
+    name: spring-batch-demo
+  datasource:
+    url: jdbc:h2:file:./data/testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    initialization-mode: always
+  batch:
+    initialize-schema: always
+    job.enabled: false # needs to be commented off except when run 'JobLauncherDemo'
+    #job.names: parentJob # As tested in my configuration, this parameter is not needed.
+  h2.console.enabled: true
